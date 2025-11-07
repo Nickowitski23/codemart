@@ -22,7 +22,7 @@ public class CategoryController {
         stage.show();
     }
 
-    // Handle Drinks button click
+   
     @FXML
     protected void onDrinksButtonClick(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -33,7 +33,7 @@ public class CategoryController {
         stage.show();
     }
 
-    // Handle Snacks button click
+   
     @FXML
     protected void onSnacksButtonClick(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -44,7 +44,7 @@ public class CategoryController {
         stage.show();
     }
 
-    // Handle School Supplies button click
+    
     @FXML
     protected void onSchoolSuppliesButtonClick(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -78,3 +78,4 @@ public class CategoryController {
         stage.show();
     }
 }
+
