@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.codemart.FoodessentialsController"
+           style="-fx-background-color: linear-gradient(to bottom right, #43A047, #81C784); -fx-padding: 25;">
+
+    <BorderPane style="-fx-background-color: white; -fx-background-radius: 18;
+                       -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 25, 0, 0, 3); -fx-padding: 20;">
+
+        <center>
+            <HBox spacing="15" alignment="TOP_CENTER" style="-fx-padding: 10;">
+
+                <!-- LEFT SIDE (Product Section) -->
+                <VBox spacing="15" HBox.hgrow="ALWAYS" maxWidth="700"
+                      style="-fx-background-color: linear-gradient(to bottom right, #FFFFFF, #F1F8E9);
+                             -fx-background-radius: 15; -fx-padding: 20;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 3);">
+
+                    <!-- LOGO + TITLE -->
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <ImageView fitWidth="100" preserveRatio="true"
+                                   style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2);">
+                            <image>
+                                <Image url="@Logo.png"/>
+                            </image>
+                        </ImageView>
+
+                        <Label text="Food Essentials"
+                               style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2E7D32;" />
+                    </HBox>
+
+                    <Label text="Fresh, affordable, and ready for your daily needs 🌿"
+                           style="-fx-font-size: 15px; -fx-text-fill: #4CAF50;" />
+
+                    <!-- PRODUCT LIST -->
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                        <GridPane fx:id="productGrid" hgap="20" vgap="20" alignment="TOP_LEFT">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+
+                            <!-- === PRODUCT CARDS === -->
+                            <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5;
+                                         -fx-padding: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);
+                                         -fx-pref-width: 200;">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label fx:id="soySauceName" text="Soy Sauce" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                                <Label fx:id="soySaucePrice" text="₱80.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Soy Sauce|80.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5;
+                                         -fx-padding: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);
+                                         -fx-pref-width: 200;">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label fx:id="vinegarName" text="Vinegar" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                                <Label fx:id="vinegarPrice" text="₱25.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Vinegar|25.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <VBox GridPane.rowIndex="0" GridPane.columnIndex="2" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5;
+                                         -fx-padding: 12; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);
+                                         -fx-pref-width: 200;">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label fx:id="cookingOilName" text="Cooking Oil" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+                                <Label fx:id="cookingOilPrice" text="₱150.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Cooking Oil|150.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <!-- === Additional Rows (Fish Sauce, Salt, etc.) === -->
+                            <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5; -fx-padding: 12;
+                                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label text="Fish Sauce" style="-fx-font-weight: bold;"/>
+                                <Label text="₱45.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Fish Sauce|45.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <VBox GridPane.rowIndex="1" GridPane.columnIndex="1" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5; -fx-padding: 12;
+                                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label text="Salt" style="-fx-font-weight: bold;"/>
+                                <Label text="₱15.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Salt|15.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <VBox GridPane.rowIndex="1" GridPane.columnIndex="2" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5; -fx-padding: 12;
+                                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label text="Sugar" style="-fx-font-weight: bold;"/>
+                                <Label text="₱85.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Sugar|85.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <!-- === ROW 3 === -->
+                            <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5; -fx-padding: 12;
+                                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label text="Corned Beef" style="-fx-font-weight: bold;"/>
+                                <Label text="₱70.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Corned Beef|70.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <VBox GridPane.rowIndex="2" GridPane.columnIndex="1" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5; -fx-padding: 12;
+                                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label text="Canned Tuna" style="-fx-font-weight: bold;"/>
+                                <Label text="₱40.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Canned Tuna|40.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+
+                            <VBox GridPane.rowIndex="2" GridPane.columnIndex="2" alignment="TOP_CENTER" spacing="8"
+                                  style="-fx-background-color: white; -fx-background-radius: 12;
+                                         -fx-border-color: linear-gradient(to bottom right, #81C784, #388E3C);
+                                         -fx-border-radius: 12; -fx-border-width: 1.5; -fx-padding: 12;
+                                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+                                <ImageView fitWidth="100" fitHeight="100" preserveRatio="true"/>
+                                <Label text="Meat Loaf" style="-fx-font-weight: bold;"/>
+                                <Label text="₱35.00" style="-fx-text-fill: #D32F2F;"/>
+                                <Button text="Add to Cart" onAction="#onAddToCartButtonClick" userData="Meat Loaf|35.00"
+                                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                                               -fx-text-fill: white; -fx-background-radius: 10; -fx-font-weight: bold;"/>
+                            </VBox>
+                        </GridPane>
+                    </ScrollPane>
+
+                    <!-- BACK BUTTON -->
+                    <Button text="Back to Categories"
+                            onAction="#onBackToCategoriesButtonClick"
+                            style="-fx-background-color: linear-gradient(to right, #81C784, #4CAF50);
+                                   -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;
+                                   -fx-padding: 10 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 2);">
+                        <VBox.margin>
+                            <Insets top="10" />
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+
+                <Separator orientation="VERTICAL" prefHeight="200" />
+
+                <!-- RIGHT SIDE (CART) -->
+                <VBox spacing="10" minWidth="300" maxWidth="350"
+                      style="-fx-background-color: linear-gradient(to bottom right, #E8F5E9, #C8E6C9);
+                             -fx-background-radius: 15; -fx-padding: 15; -fx-border-color: #81C784;
+                             -fx-border-width: 2; -fx-border-radius: 15;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 2);">
+
+                    <Label text="🛒 Shopping Cart"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2E7D32;"/>
+
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+                        <VBox fx:id="cartItemsVBox" spacing="5" />
+                    </ScrollPane>
+
+                    <Separator/>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="TOTAL:" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <Label fx:id="cartTotalLabel" text="₱0.00"
+                               style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #D32F2F;"/>
+                    </HBox>
+
+                    <Button text="Checkout" maxWidth="Infinity"
+                            style="-fx-background-color: linear-gradient(to right, #FFD54F, #FFC107);
+                                   -fx-font-weight: bold; -fx-text-fill: #333; -fx-background-radius: 10;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);"/>
+
+                </VBox>
+            </HBox>
+        </center>
+    </BorderPane>
+</StackPane>
