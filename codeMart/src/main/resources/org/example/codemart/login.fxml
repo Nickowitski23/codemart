@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.codemart.LoginController"
+           style="-fx-background-color: linear-gradient(to bottom right, #2E7D32, #66BB6A);">
+
+    <VBox alignment="CENTER" spacing="15"
+          maxWidth="300"
+          style="-fx-background-color: rgba(255,255,255,0.15);
+                 -fx-background-radius: 15;
+                 -fx-padding: 25;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 4);">
+
+        <!-- LOGO IMAGE -->
+        <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+            <image>
+                <Image url="@Logo.png" />
+            </image>
+        </ImageView>
+
+        <Label text="CodeMart Login"
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+        <TextField fx:id="usernameField" promptText="Username"
+                   style="-fx-background-radius: 8; -fx-background-color: white; -fx-padding: 8 10;" />
+        <PasswordField fx:id="passwordField" promptText="Password"
+                       style="-fx-background-radius: 8; -fx-background-color: white; -fx-padding: 8 10;" />
+
+        <Label fx:id="statusLabel" text="Enter your login details"
+               style="-fx-text-fill: #C8E6C9; -fx-font-weight: bold;" />
+
+        <Button text="Login"
+                onAction="#onLoginButtonClick"
+                maxWidth="Infinity"
+                style="-fx-background-color: #388E3C; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        <Button text="Create Account"
+                onAction="#onCreateAccountButtonClick"
+                maxWidth="Infinity"
+                style="-fx-background-color: #81C784; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+        <Button text="Admin"
+                onAction="#onAdminButtonClick"
+                maxWidth="Infinity"
+                style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8;" />
+
+    </VBox>
+</StackPane>

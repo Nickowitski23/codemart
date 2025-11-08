@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.codemart.CheckoutController"
+           style="-fx-background-color: linear-gradient(to bottom right, #43A047, #81C784);">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          style="-fx-padding: 30;">
+
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                     -fx-padding: 20; -fx-background-radius: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0, 0, 5);">
+            <ImageView fitHeight="60" fitWidth="60">
+                <image>
+                    <Image url="@Logo.png"/>
+                </image>
+            </ImageView>
+            <Label text="Checkout"
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Cart Items ScrollPane -->
+        <ScrollPane fitToWidth="true" prefHeight="400" style="-fx-background-color: transparent;">
+            <VBox fx:id="checkoutCartVBox" spacing="15" style="-fx-padding: 10;">
+                <!-- Items will be populated dynamically -->
+            </VBox>
+        </ScrollPane>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-background-color: linear-gradient(to right, #A5D6A7, #66BB6A);
+                                                            -fx-padding: 15; -fx-background-radius: 15;
+                                                            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 2);">
+            <Label text="TOTAL:" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label fx:id="checkoutTotalLabel" text="₱0.00" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1B5E20;"/>
+        </HBox>
+
+        <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-background-color: #C8E6C9; -fx-padding: 15; -fx-background-radius: 15;
+                                                            -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);">
+            <Label text="Payment Method:" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2E7D32;"/>
+            <ComboBox fx:id="paymentComboBox" prefWidth="250" promptText="Select Payment"
+                      style="-fx-background-radius: 12; -fx-border-radius: 12; -fx-padding: 5; -fx-border-color: #388E3C; -fx-border-width: 2;"/>
+        </HBox>
+
+        <HBox spacing="25" alignment="CENTER">
+            <Button text="Back to Categories" onAction="#onBackToCategoriesButtonClick"
+                    style="-fx-background-color: #D32F2F; -fx-text-fill: white; -fx-font-weight: bold;
+                           -fx-background-radius: 15; -fx-padding: 12 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 2);"/>
+            <Button text="Confirm Payment" onAction="#onConfirmPaymentButtonClick"
+                    style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047); -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 15; -fx-padding: 12 30;
+                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 2);"/>
+        </HBox>
+
+    </VBox>
+</StackPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.example.codemart.InventoryController"
+           style="-fx-background-color: linear-gradient(to bottom right, #43A047, #81C784);">
+
+    <VBox spacing="20" alignment="TOP_CENTER"
+          style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 18;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 18, 0, 0, 5);"
+          StackPane.alignment="CENTER">
+
+        <Label text="Admin Inventory Management"
+               style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2E7D32;" />
+
+        <!-- INPUT FORM -->
+        <HBox spacing="15" alignment="CENTER">
+
+            <VBox spacing="10">
+                <Label text="Product Name:" style="-fx-font-weight: bold;" />
+                <TextField fx:id="productNameField" promptText="Enter product name"
+                           style="-fx-background-radius: 8; -fx-padding: 8;" />
+            </VBox>
+
+            <VBox spacing="10">
+                <Label text="Price:" style="-fx-font-weight: bold;" />
+                <TextField fx:id="productPriceField" promptText="Enter price"
+                           style="-fx-background-radius: 8; -fx-padding: 8;" />
+            </VBox>
+
+            <VBox spacing="10">
+                <Label text="Category:" style="-fx-font-weight: bold;" />
+                <ComboBox fx:id="categoryComboBox" prefWidth="170"
+                          style="-fx-background-radius: 8; -fx-padding: 5;" />
+            </VBox>
+
+            <VBox spacing="10">
+                <Label text="Stock:" style="-fx-font-weight: bold;" />
+                <TextField fx:id="productStockField" promptText="Enter stock"
+                           style="-fx-background-radius: 8; -fx-padding: 8;" />
+            </VBox>
+
+            <VBox spacing="10" alignment="BOTTOM_CENTER">
+                <Button text="Add Item" onAction="#onAddItemClick"
+                        style="-fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+                               -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 10; -fx-padding: 10 20;" />
+            </VBox>
+
+        </HBox>
+
+        <!-- TABLE OF ITEMS -->
+        <TableView fx:id="inventoryTable" prefHeight="350" style="-fx-background-radius: 10;">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Product Name" prefWidth="200"/>
+                <TableColumn fx:id="priceColumn" text="Price" prefWidth="100"/>
+                <TableColumn fx:id="categoryColumn" text="Category" prefWidth="150"/>
+                <TableColumn fx:id="stockColumn" text="Stock" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <!-- BACK BUTTON -->
+        <Button text="Back to Login" onAction="#onBackClick"
+                style="-fx-background-color: #D32F2F; -fx-text-fill: white;
+                       -fx-font-weight: bold; -fx-background-radius: 10; -fx-padding: 10 20;" />
+    </VBox>
+
+</StackPane>
